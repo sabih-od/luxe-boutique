@@ -1,0 +1,41 @@
+.main-slider {
+  height: 100vh;
+  background-color: var(--black);
+}
+
+.homeSlider.swiper-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+.homeSlider.swiper-container .swiper-slide {
+  overflow: hidden;
+}
+
+.homeSlider .slide-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.main-slider h1 {
+    font-size: 60px;
+    text-align: center;
+    color: var(--white);
+}
+.main-slider p {
+ 
+}

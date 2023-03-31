@@ -1,0 +1,59 @@
+version: "3.8"
+
+networks:
+  ima-app-network:
+    driver: bridge
+
+services:
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    networks:
+      - ima-app-network
+  ima_app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: ima-app
+    container_name: ima_app
+    restart: unless-stopped
+    tty: true
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    networks:
+      - ima-app-network
+  ima_mysql:
+    image: mysql:5.7.41
+    container_name: ima_mysql
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8083:3306"
+    environment:
+      MYSQL_DATABASE: ima_app_db
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_PASSWORD: secret
+      MYSQL_USER: ima_dev
+      SERVICE_TAGS: dev
+      SERVICE_NAME: ima_mysql
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+    networks:
+      - ima-app-network
+
+  ima_nginx:
+    image: nginx:1.19.8-alpine
+    container_name: ima_nginx
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8100:80"
+    volumes:
+      - ./.:/var/www
+      - ./nginx/conf:/etc/nginx/conf.d
+    networks:
+      - ima-app-network
+

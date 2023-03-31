@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'OneSlice';
+  src: url('OneSlice.eot');
+  src: url('OneSlice.eot?#iefix') format('embedded-opentype'),
+       url('OneSlice.svg#OneSlice') format('svg'),
+       url('OneSlice.ttf') format('truetype'),
+       url('OneSlice.woff') format('woff'),
+       url('OneSlice.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+

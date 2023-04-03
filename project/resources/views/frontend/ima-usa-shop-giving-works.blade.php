@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('content')
-    @include('partials.global.common-header')
+ {{--@includeIf('partials.global.common-header')--}}
     <!-- breadcrumb -->
     <div class="full-row bg-light overlay-dark py-5"
          style="background-image: url({{ $gs->breadcrumb_banner ? asset('assets/images/'.$gs->breadcrumb_banner):asset('assets/images/noimage.png') }}); background-position: center center; background-size: cover;">
@@ -61,5 +61,5 @@
 
         </div>
     </section>
-    @includeIf('partials.global.common-footer')
+{{--@includeIf('partials.global.common-footer')--}}
 @endsection

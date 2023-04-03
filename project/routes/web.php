@@ -1494,38 +1494,38 @@ Route::group(['middleware' => 'maintenance'], function () {
         Route::get('/faq', 'Front\FrontendController@faq')->name('front.faq');
         // FAQ SECTION ENDS
 
-        // TERMS SECTION
-        //    Route::get('/terms', 'Front\FrontendController@termsAndConditions')->name('front.terms');
-        // TERMS SECTION ENDS
+//         TERMS SECTION
+            Route::get('/terms', 'Front\FrontendController@termsAndConditions')->name('front.terms');
+//         TERMS SECTION ENDS
 
-        // PRIVACY POLICY SECTION
-        //    Route::get('/privacy', 'Front\FrontendController@privacyPolicy')->name('front.privacy_policy');
-        // PRIVACY POLICY SECTION ENDS
-//
-//        Route::get('/affiliates', 'Front\FrontendController@affiliates')->name('front.affiliates');
-//        Route::get('/announcements', 'Front\FrontendController@announcements')->name('front.announcements');
-//        Route::get('/buyers-policy', 'Front\FrontendController@buyersPolicy')->name('front.buyersPolicy');
-//        Route::get('/careers', 'Front\FrontendController@careers')->name('front.careers');
-//        Route::get('/company-info', 'Front\FrontendController@companyInfo')->name('front.companyInfo');
+//         PRIVACY POLICY SECTION
+            Route::get('/privacy', 'Front\FrontendController@privacyPolicy')->name('front.privacy_policy');
+//         PRIVACY POLICY SECTION ENDS
+
+        Route::get('/affiliates', 'Front\FrontendController@affiliates')->name('front.affiliates');
+        Route::get('/announcements', 'Front\FrontendController@announcements')->name('front.announcements');
+        Route::get('/buyers-policy', 'Front\FrontendController@buyersPolicy')->name('front.buyersPolicy');
+        Route::get('/careers', 'Front\FrontendController@careers')->name('front.careers');
+        Route::get('/company-info', 'Front\FrontendController@companyInfo')->name('front.companyInfo');
 //        Route::get('/contact-us', 'Front\FrontendController@contactUs')->name('front.contactUs');
 //        Route::post('/contact-us', 'Front\FrontendController@ContactUsSentEmail')->name('front.contactUsSentEmail');
 //        Route::post('/contact-email', 'Front\FrontendController@contactemail')->name('front.contact.submit');
-//        Route::get('/developers', 'Front\FrontendController@developers')->name('front.developers');
-//        Route::get('/discussion-boards', 'Front\FrontendController@discussionBoards')->name('front.discussionBoards');
-//        Route::get('/government-relations', 'Front\FrontendController@governmentRelations')->name('front.governmentRelations');
-//        Route::get('/ima-usa-shop-giving-works', 'Front\FrontendController@imaUsaShopGivingWorks')->name('front.imaUsaShopGivingWorks');
-//        Route::get('/investors', 'Front\FrontendController@investors')->name('front.investors');
-//        Route::get('/learn-to-sell', 'Front\FrontendController@learnToSell')->name('front.learnToSell');
-//        Route::get('/news', 'Front\FrontendController@news')->name('front.news');
-//        Route::get('/policies', 'Front\FrontendController@policies')->name('front.policies');
-//        Route::get('/questionnaire-for-sellers', 'Front\FrontendController@questionnaireForSellers')->name('front.questionnaireForSellers');
-//        Route::get('/return_policy', 'Front\FrontendController@return_policy')->name('front.returnPolicy');
-//        Route::get('/security-center', 'Front\FrontendController@securityCenter')->name('front.securityCenter');
-//        Route::get('/seller-information-center', 'Front\FrontendController@sellerInformationCenter')->name('front.sellerInformationCenter');
-//        Route::get('/sellers-policy', 'Front\FrontendController@sellersPolicy')->name('front.sellersPolicy');
-//        Route::get('/site-map', 'Front\FrontendController@siteMap')->name('front.siteMap');
-//        Route::get('/start-selling', 'Front\FrontendController@startSelling')->name('front.startSelling');
-//        Route::get('/verified-rights-owner-program', 'Front\FrontendController@verifiedRightsOwnerProgram')->name('front.verifiedRightsOwnerProgram');
+        Route::get('/developers', 'Front\FrontendController@developers')->name('front.developers');
+        Route::get('/discussion-boards', 'Front\FrontendController@discussionBoards')->name('front.discussionBoards');
+        Route::get('/government-relations', 'Front\FrontendController@governmentRelations')->name('front.governmentRelations');
+        Route::get('/ima-usa-shop-giving-works', 'Front\FrontendController@imaUsaShopGivingWorks')->name('front.imaUsaShopGivingWorks');
+        Route::get('/investors', 'Front\FrontendController@investors')->name('front.investors');
+        Route::get('/learn-to-sell', 'Front\FrontendController@learnToSell')->name('front.learnToSell');
+        Route::get('/news', 'Front\FrontendController@news')->name('front.news');
+        Route::get('/policies', 'Front\FrontendController@policies')->name('front.policies');
+        Route::get('/questionnaire-for-sellers', 'Front\FrontendController@questionnaireForSellers')->name('front.questionnaireForSellers');
+        Route::get('/return_policy', 'Front\FrontendController@return_policy')->name('front.returnPolicy');
+        Route::get('/security-center', 'Front\FrontendController@securityCenter')->name('front.securityCenter');
+        Route::get('/seller-information-center', 'Front\FrontendController@sellerInformationCenter')->name('front.sellerInformationCenter');
+        Route::get('/sellers-policy', 'Front\FrontendController@sellersPolicy')->name('front.sellersPolicy');
+        Route::get('/site-map', 'Front\FrontendController@siteMap')->name('front.siteMap');
+        Route::get('/start-selling', 'Front\FrontendController@startSelling')->name('front.startSelling');
+        Route::get('/verified-rights-owner-program', 'Front\FrontendController@verifiedRightsOwnerProgram')->name('front.verifiedRightsOwnerProgram');
 
         // RETURN POLICY SECTION
         Route::get('/return-policy', 'Front\FrontendController@returnPolicy')->name('front.return_policy');

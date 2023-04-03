@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
+use phpDocumentor\Descriptor\Interfaces\VisibilityInterface;
 use Validator;
 
 class LoginController extends Controller
@@ -55,18 +56,21 @@ class LoginController extends Controller
               {
                 if(Auth::user()->is_vendor == 2)
                 {
-                  return response()->json(route('vendor.dashboard'));
+                    return redirect()->route('vendor.dashboard')->with('success','Logged In Successfully');
+//                  return response()->json(route('vendor.dashboard'));
                 }
                 else {
-                  return response()->json(route('user-package'));
+                    return redirect()->route('user-package')->with('success','Logged In Successfully');
+//                  return response()->json(route('user-package'));
                   }
               }
             // Login as User
-            return response()->json(1);          
+//            return response()->json(1);
             }
           }
           // Login as User
-          return response()->json(redirect()->intended(route('user-dashboard'))->getTargetUrl());
+          return redirect()->route('user-dashboard')->with('success','Logged In Successfully');
+//          return response()->json(redirect()->intended(route('user-dashboard'))->getTargetUrl());
       }
 
       // if unsuccessful, then redirect back to the login with the form data

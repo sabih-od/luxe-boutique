@@ -3,8 +3,42 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet"
+          href="{{ asset('assets/front/css/styles.php?color='.str_replace('#','', $gs->colors).'&header_color='.$gs->header_color) }}">
+    <link rel="stylesheet" href="{{ asset('assets/front/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/front/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/front/css/plugin.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/front/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/front/webfonts/flaticon/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/front/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/front/css/template.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/front/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/front/css/category/default.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/front/css/toastr.min.css') }}">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
-{{--    <meta charset="UTF-8">--}}
+
+    {{--    additional css--}}
+    {{--    <link rel="stylesheet" href="{{ asset('assets/front/additional-css/aos.css') }}">--}}
+    {{--    <link rel="stylesheet" href="{{ asset('assets/front/additional-css/bootstrap.min.css') }}">--}}
+    {{--    <link rel="stylesheet" href="{{ asset('assets/front/additional-css/custom.min.css') }}">--}}
+    {{--    <link rel="stylesheet" href="{{ asset('assets/front/additional-css/fontawesome.min.css') }}">--}}
+    {{--    <link rel="stylesheet" href="{{ asset('assets/front/additional-css/jquery.fancybox.min.css') }}">--}}
+    {{--    <link rel="stylesheet" href="{{ asset('assets/front/additional-css/responsive.css') }}">--}}
+    {{--    <link rel="stylesheet" href="{{ asset('assets/front/additional-css/slick.min.css') }}">--}}
+    {{--    <link rel="stylesheet" href="{{ asset('assets/front/additional-css/slick-theme.min.css') }}">--}}
+    {{--    <link rel="stylesheet" href="{{ asset('assets/front/additional-css/slider.css') }}">--}}
+    {{--    <link rel="stylesheet" href="{{ asset('assets/front/additional-css/swiper-bundle.min.css') }}">--}}
+
+
+    {{--    <meta charset="UTF-8">--}}
 {{--    <meta name="viewport" content="width=device-width, initial-scale=1.0">--}}
 {{--    <meta http-equiv="X-UA-Compatible" content="ie=edge">--}}
 {{--    <meta name="description" content="GeniusCart-New - Multivendor Ecommerce system">--}}
@@ -197,10 +231,33 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('front.contactUs')}}">Contact Us</a>
                     </li>
+
+                    @if($gs->reg_vendor == 1)
+                        @if(!Auth::check())
+                            <li class="nav-item">
+                                <a href="{{ route('vendor.register') }}" class="nav-link">{{ __('Vendor Sign Up') }}</a>
+                            </li>
+                        @endif
+                    @endif
+
+                    @if (Auth::user())
+                        <li class="nav-item">
+                            <a href="{{ route('user-dashboard') }}" class="nav-link">{{ __('Dashboard') }}</a>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a href="{{ route('user.login') }}" class="nav-link">{{ __('Sign in') }}</a>
+                        </li>
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="{{ route('user.register') }}" class="nav-link">{{ __('Sign up') }}</a>--}}
+{{--                        </li>--}}
+                    @endif
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fal fa-shopping-cart"></i></a>
+                    </li>
                 </ul>
-                <div class="shopbasket">
-                    <a class="nav-link" href="#"><i class="fal fa-shopping-cart"></i></a>
-                </div>
+
             </div>
         </nav>
     </div>

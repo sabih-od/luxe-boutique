@@ -92,8 +92,9 @@ class DashboardController extends AdminBaseController
             $input['photo'] = $name;
             }
         $data->update($input);
-        $msg = __('Successfully updated your profile');
-        return response()->json($msg);
+        return redirect()->back()->with('success','Successfully updated your profile');
+//        $msg = __('Successfully updated your profile');
+//        return response()->json($msg);
     }
 
     public function passwordreset()

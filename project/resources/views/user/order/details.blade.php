@@ -17,7 +17,7 @@
 @endsection
 
 @section('content')
-    @include('partials.global.common-header')
+    {{--@includeIf('partials.global.common-header')--}}
 
     <!-- breadcrumb -->
     <div class="full-row bg-light overlay-dark py-5"
@@ -404,7 +404,7 @@
         </div>
     </div>
 
-    @includeIf('partials.global.common-footer')
+{{--@includeIf('partials.global.common-footer')--}}
 
 @endsection
 @section('script')

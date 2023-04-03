@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 @section('content')
-@include('partials.global.common-header')
+{{--@includeIf('partials.global.common-header')--}}
 
 <!-- breadcrumb -->
 <div class="full-row bg-light py-5">
@@ -43,6 +43,6 @@
 
 
 
-@includeIf('partials.global.common-footer')
+{{--@includeIf('partials.global.common-footer')--}}
 
 @endsection

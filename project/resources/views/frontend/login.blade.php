@@ -1,68 +1,69 @@
 @extends('layouts.front')
 
 @section('content')
-@include('partials.global.common-header')
+
+{{--@includeIf('partials.global.common-header')--}}
 {{-- Coming Soon Section Start --}}
-@if(session()->has('userBooking') || \Illuminate\Support\Facades\Auth::check())
-    @php
-        $login_time = Carbon\Carbon::parse(session()->get('userBooking'))->addHour();
-    @endphp
-    @if((\Carbon\Carbon::now() > $login_time) && !(\Illuminate\Support\Facades\Auth::check()))
-        <div class="commingSoon">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h1>
-                            Coming Soon
-                        </h1>
-                    </div>
-                    <div class="col-12">
-                        <form action="{{ route('front.userBookings') }}" method="POST" name="booking" enctype="multipart/form-data">
-                            @csrf
-                            <div class="inputCont">
-                                <label for="">Password</label>
-                                <input type="password" name="password">
-                                @error('password')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="inputCont">
-                                <button type="submit">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endif
-@else
-    <div class="commingSoon">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1>
-                        Coming Soon
-                    </h1>
-                </div>
-                <div class="col-12">
-                    <form action="{{ route('front.userBookings') }}" method="POST" name="booking" enctype="multipart/form-data">
-                        @csrf
-                        <div class="inputCont">
-                            <label for="">Password</label>
-                            <input type="password" name="password">
-                            @error('password')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <div class="inputCont">
-                            <button type="submit">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-@endif
+{{--@if(session()->has('userBooking') || \Illuminate\Support\Facades\Auth::check())--}}
+{{--    @php--}}
+{{--        $login_time = Carbon\Carbon::parse(session()->get('userBooking'))->addHour();--}}
+{{--    @endphp--}}
+{{--    @if((\Carbon\Carbon::now() > $login_time) && !(\Illuminate\Support\Facades\Auth::check()))--}}
+{{--        <div class="commingSoon">--}}
+{{--            <div class="container">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-12">--}}
+{{--                        <h1>--}}
+{{--                            Coming Soon--}}
+{{--                        </h1>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-12">--}}
+{{--                        <form action="{{ route('front.userBookings') }}" method="POST" name="booking" enctype="multipart/form-data">--}}
+{{--                            @csrf--}}
+{{--                            <div class="inputCont">--}}
+{{--                                <label for="">Password</label>--}}
+{{--                                <input type="password" name="password">--}}
+{{--                                @error('password')--}}
+{{--                                <div class="text-danger">{{ $message }}</div>--}}
+{{--                                @enderror--}}
+{{--                            </div>--}}
+{{--                            <div class="inputCont">--}}
+{{--                                <button type="submit">Submit</button>--}}
+{{--                            </div>--}}
+{{--                        </form>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    @endif--}}
+{{--@else--}}
+{{--    <div class="commingSoon">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-12">--}}
+{{--                    <h1>--}}
+{{--                        Coming Soon--}}
+{{--                    </h1>--}}
+{{--                </div>--}}
+{{--                <div class="col-12">--}}
+{{--                    <form action="{{ route('front.userBookings') }}" method="POST" name="booking" enctype="multipart/form-data">--}}
+{{--                        @csrf--}}
+{{--                        <div class="inputCont">--}}
+{{--                            <label for="">Password</label>--}}
+{{--                            <input type="password" name="password">--}}
+{{--                            @error('password')--}}
+{{--                            <div class="text-danger">{{ $message }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+{{--                        <div class="inputCont">--}}
+{{--                            <button type="submit">Submit</button>--}}
+{{--                        </div>--}}
+{{--                    </form>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--@endif--}}
 
 <!-- breadcrumb -->
 <div class="full-row bg-light overlay-dark py-5" style="background-image: url({{ $gs->breadcrumb_banner ? asset('assets/images/'.$gs->breadcrumb_banner):asset('assets/images/noimage.png') }}); background-position: center center; background-size: cover;">
@@ -174,7 +175,7 @@
 
 
 
-@includeIf('partials.global.common-footer')
+{{--@includeIf('partials.global.common-footer')--}}
 @endsection
 
 @section('script')

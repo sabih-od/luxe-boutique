@@ -54,7 +54,7 @@ class RegisterController extends FrontBaseController
     public function register(Request $request)
     {
         //--- Validation Section
-dd('check vendor route');
+
         $rules = [
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed'

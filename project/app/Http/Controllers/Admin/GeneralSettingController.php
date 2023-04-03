@@ -15,17 +15,17 @@ class GeneralSettingController extends AdminBaseController
 {
     protected $rules =
     [
-        'logo'              => 'mimes:jpeg,jpg,png,svg',
-        'favicon'           => 'mimes:jpeg,jpg,png,svg',
+        'logo'              => 'mimes:jpeg,jpg,png,svg,webp',
+        'favicon'           => 'mimes:jpeg,jpg,png,svg,webp',
         'loader'            => 'mimes:gif',
         'admin_loader'      => 'mimes:gif',
-        'affilate_banner'   => 'mimes:jpeg,jpg,png,svg',
-        'error_banner_404'  => 'mimes:jpeg,jpg,png,svg',
-        'error_banner_500'  => 'mimes:jpeg,jpg,png,svg',
-        'popup_background'  => 'mimes:jpeg,jpg,png,svg',
-        'invoice_logo'      => 'mimes:jpeg,jpg,png,svg',
-        'user_image'        => 'mimes:jpeg,jpg,png,svg',
-        'footer_logo'       => 'mimes:jpeg,jpg,png,svg',
+        'affilate_banner'   => 'mimes:jpeg,jpg,png,svg,webp',
+        'error_banner_404'  => 'mimes:jpeg,jpg,png,svg,webp',
+        'error_banner_500'  => 'mimes:jpeg,jpg,png,svg,webp',
+        'popup_background'  => 'mimes:jpeg,jpg,png,svg,webp',
+        'invoice_logo'      => 'mimes:jpeg,jpg,png,svg,webp',
+        'user_image'        => 'mimes:jpeg,jpg,png,svg,webp',
+        'footer_logo'       => 'mimes:jpeg,jpg,png,svg,webp',
     ];
 
     private function setEnv($key, $value,$prev)

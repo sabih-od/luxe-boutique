@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{asset('assets/front/css/datatables.css')}}">
 @endsection
 @section('content')
-    @include('partials.global.common-header')
+    {{--@includeIf('partials.global.common-header')--}}
     <Style>
         .Refund_order_msg {
             display: none;
@@ -126,7 +126,7 @@
     </div>
     <!--==================== Blog Section End ====================-->
 
-    @includeIf('partials.global.common-footer')
+{{--@includeIf('partials.global.common-footer')--}}
 
 @endsection
 @section('script')

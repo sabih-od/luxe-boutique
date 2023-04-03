@@ -214,40 +214,29 @@
                             <button type="button" class="push-nav-toggle d-lg-none border-0">
                                 <i class="flaticon-menu-2 flat-small text-primary"></i>
                             </button>
-                            <div class="navbar-slide-push transation-this">
+
+                            <div class="navbar-item">
                                 @if (Auth::user())
-
-                                    <div
-                                        class="login-signup bg-secondary d-flex justify-content-between py-10 px-20 align-items-center">
-                                        <a href="{{ route('user-dashboard') }}"
-                                           class="d-flex align-items-center text-white">
-
+                                    <div class="login-signup bg-secondary d-flex justify-content-between py-10 px-20 align-items-center">
+                                        <a href="{{ route('user-dashboard') }}" class="d-flex align-items-center text-white">
                                             <span>{{ __('Dashboard') }}</span>
                                         </a>
-                                        <span class="slide-nav-close"><i
-                                                class="flaticon-cancel flat-mini text-white"></i></span>
+                                        <span class="slide-nav-close"><i class="flaticon-cancel flat-mini text-white"></i></span>
                                     </div>
-
-
                                 @else
-
-                                    <div
-                                        class="login-signup bg-secondary d-flex justify-content-between py-10 px-20 align-items-center">
-                                        <a href="{{ route('user.login') }}"
-                                           class="d-flex align-items-center text-white">
+                                    <div class="login-signup bg-secondary d-flex justify-content-between py-10 px-20 align-items-center">
+                                        <a href="{{ route('user.login') }}" class="d-flex align-items-center text-white">
                                             <i class="flaticon-user flat-small me-1"></i>
                                             <span>{{ __('Login') }}</span>
                                         </a>
-                                        <a href="{{ route('user.register') }}"
-                                           class="d-flex align-items-center text-white">
+                                        <a href="{{ route('user.register') }}" class="d-flex align-items-center text-white">
                                             <i class="flaticon-user flat-small me-1"></i>
                                             <span>{{ __('Signup') }}</span>
                                         </a>
-                                        <span class="slide-nav-close"><i
-                                                class="flaticon-cancel flat-mini text-white"></i></span>
+                                        <span class="slide-nav-close"><i class="flaticon-cancel flat-mini text-white"></i></span>
                                     </div>
-
                                 @endif
+                            </div>
 
                                 <div class="menu-and-category">
                                     <ul class="nav nav-pills wc-tabs" id="menu-and-category" role="tablist">

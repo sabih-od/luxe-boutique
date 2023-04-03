@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{asset('assets/front/css/datatables.css')}}">
 @endsection
 @section('content')
-@include('partials.global.common-header')
+{{--@includeIf('partials.global.common-header')--}}
 <!-- breadcrumb -->
 <div class="full-row bg-light overlay-dark py-5" style="background-image: url({{ $gs->breadcrumb_banner ? asset('assets/images/'.$gs->breadcrumb_banner):asset('assets/images/noimage.png') }}); background-position: center center; background-size: cover;">
    <div class="container">
@@ -116,7 +116,7 @@
       </div>
    </div>
 </div>
-@includeIf('partials.global.common-footer')
+{{--@includeIf('partials.global.common-footer')--}}
 {{-- Modal --}}
 @endsection
 @section('script')

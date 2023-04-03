@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 @section('content')
-    @include('partials.global.common-header')
+      {{--@includeIf('partials.global.common-header')--}}
     @if(session()->has('userBooking') || \Illuminate\Support\Facades\Auth::check())
         @php
             $login_time = Carbon\Carbon::parse(session()->get('userBooking'))->addHour();

@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('content')
-    @include('partials.global.common-header')
+   {{--@includeIf('partials.global.common-header')--}}
 {{--    @include('layouts.theme-2.menu')--}}
 
     <!-- breadcrumb -->
@@ -136,7 +136,7 @@
         </div>
     </div>
     <!-- Order Tracking modal End -->
-    @includeIf('partials.global.common-footer')
+{{--@includeIf('partials.global.common-footer')--}}
 {{--    @include('layouts.theme-2.footer')--}}
 @endsection
 @section('script')
